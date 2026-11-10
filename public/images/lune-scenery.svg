@@ -1,0 +1,231 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+  <defs>
+    <!-- Sky gradient -->
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b8ded6"/>
+      <stop offset="35%" stop-color="#cae8e1"/>
+      <stop offset="65%" stop-color="#d8ede7"/>
+      <stop offset="100%" stop-color="#d1eae3"/>
+    </linearGradient>
+
+    <!-- Lake gradient -->
+    <linearGradient id="lakeGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a8d7cd"/>
+      <stop offset="40%" stop-color="#bce3dc"/>
+      <stop offset="100%" stop-color="#caebe4"/>
+    </linearGradient>
+
+    <!-- Mountain gradients -->
+    <linearGradient id="mountGradFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9dcbc0" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#bfe0d7" stop-opacity="0.5"/>
+    </linearGradient>
+
+    <linearGradient id="mountGradMid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#76b1a3"/>
+      <stop offset="100%" stop-color="#a4d3c7"/>
+    </linearGradient>
+
+    <!-- Foliage teal shades -->
+    <linearGradient id="foliageDark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#123d40"/>
+      <stop offset="100%" stop-color="#1b5256"/>
+    </linearGradient>
+
+    <linearGradient id="foliageMid" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1f5d61"/>
+      <stop offset="100%" stop-color="#2d777b"/>
+    </linearGradient>
+
+    <linearGradient id="foliageLight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2d777b"/>
+      <stop offset="100%" stop-color="#46999b"/>
+    </linearGradient>
+
+    <linearGradient id="foliageMint" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4ea3a4"/>
+      <stop offset="100%" stop-color="#72babb"/>
+    </linearGradient>
+
+    <!-- Rock gradient -->
+    <linearGradient id="rockGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a88298"/>
+      <stop offset="50%" stop-color="#8a6479"/>
+      <stop offset="100%" stop-color="#6e4d5f"/>
+    </linearGradient>
+
+    <!-- Lily Orange gradient -->
+    <linearGradient id="lilyGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff7f50"/>
+      <stop offset="70%" stop-color="#e95328"/>
+      <stop offset="100%" stop-color="#c93812"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1600" height="1000" fill="url(#skyGrad)"/>
+
+  <!-- Soft clouds -->
+  <path d="M-50,180 Q120,120 300,160 Q480,200 650,150 Q800,110 980,140 Q1200,180 1450,130 Q1580,110 1650,140 L1650,280 L-50,280 Z" fill="#ffffff" fill-opacity="0.25"/>
+  <path d="M-50,220 Q200,170 450,200 Q700,230 950,180 Q1250,140 1500,190 Q1600,210 1650,190 L1650,330 L-50,330 Z" fill="#ffffff" fill-opacity="0.15"/>
+
+  <!-- Distant Mountains -->
+  <path d="M-50,420 Q180,330 380,360 Q550,390 720,340 Q900,290 1100,340 Q1300,380 1480,320 Q1580,300 1650,330 L1650,560 L-50,560 Z" fill="url(#mountGradFar)"/>
+  <path d="M200,480 Q450,380 680,410 Q850,440 1020,380 Q1250,310 1450,370 Q1550,400 1650,370 L1650,580 L200,580 Z" fill="url(#mountGradMid)" fill-opacity="0.5"/>
+
+  <!-- Lake / Water -->
+  <rect x="0" y="480" width="1600" height="520" fill="url(#lakeGrad)"/>
+
+  <!-- Water Reflections / Ripples -->
+  <ellipse cx="800" cy="530" rx="350" ry="4" fill="#ffffff" fill-opacity="0.35"/>
+  <ellipse cx="500" cy="560" rx="220" ry="3.5" fill="#ffffff" fill-opacity="0.3"/>
+  <ellipse cx="1100" cy="570" rx="280" ry="3.5" fill="#ffffff" fill-opacity="0.3"/>
+  <ellipse cx="750" cy="610" rx="420" ry="4" fill="#ffffff" fill-opacity="0.25"/>
+  <ellipse cx="400" cy="650" rx="260" ry="4" fill="#ffffff" fill-opacity="0.25"/>
+  <ellipse cx="1200" cy="670" rx="300" ry="4" fill="#ffffff" fill-opacity="0.25"/>
+
+  <!-- Left Forest & Trees -->
+  <!-- Deep backdrop tree shapes -->
+  <g>
+    <!-- Trunk & branches -->
+    <path d="M-30,700 Q40,550 60,350 Q10,480 -30,620 Z" fill="#143436"/>
+    <!-- Tree canopy cluster 1 (upper left) -->
+    <ellipse cx="10" cy="380" rx="140" ry="110" fill="url(#foliageDark)"/>
+    <ellipse cx="60" cy="450" rx="130" ry="100" fill="url(#foliageMid)"/>
+    <ellipse cx="-20" cy="480" rx="110" ry="90" fill="url(#foliageDark)"/>
+    <ellipse cx="70" cy="520" rx="100" ry="80" fill="url(#foliageLight)"/>
+    <ellipse cx="20" cy="540" rx="90" ry="75" fill="url(#foliageMid)"/>
+
+    <!-- Left lower canopy -->
+    <ellipse cx="-30" cy="680" rx="160" ry="130" fill="url(#foliageDark)"/>
+    <ellipse cx="50" cy="690" rx="130" ry="110" fill="url(#foliageMid)"/>
+    <ellipse cx="90" cy="740" rx="110" ry="90" fill="url(#foliageLight)"/>
+    <ellipse cx="40" cy="790" rx="140" ry="110" fill="url(#foliageDark)"/>
+    <ellipse cx="110" cy="820" rx="100" ry="80" fill="url(#foliageMid)"/>
+
+    <!-- Small leaf details on left -->
+    <circle cx="120" cy="470" r="28" fill="url(#foliageMint)"/>
+    <circle cx="140" cy="510" r="22" fill="url(#foliageLight)"/>
+    <circle cx="155" cy="720" r="32" fill="url(#foliageMint)"/>
+    <circle cx="170" cy="760" r="26" fill="url(#foliageLight)"/>
+  </g>
+
+  <!-- Left Rocks -->
+  <path d="M80,820 L150,780 L180,810 L195,850 L140,890 L70,870 Z" fill="url(#rockGrad)"/>
+  <path d="M140,820 L180,780 L200,815 L175,855 Z" fill="#b993a9" fill-opacity="0.6"/>
+
+  <!-- Left Reeds, Tall Grass, Berry Twigs -->
+  <g>
+    <!-- Stems -->
+    <path d="M10,950 Q40,800 50,710" stroke="#16393b" stroke-width="4" fill="none"/>
+    <path d="M25,960 Q65,830 85,730" stroke="#16393b" stroke-width="4" fill="none"/>
+    <path d="M40,970 Q95,840 120,750" stroke="#1c484a" stroke-width="3.5" fill="none"/>
+    <path d="M60,980 Q130,860 160,780" stroke="#1c484a" stroke-width="3" fill="none"/>
+
+    <!-- Berry branches -->
+    <path d="M-10,850 Q20,760 30,680" stroke="#3b2024" stroke-width="2.5" fill="none"/>
+    <!-- Red berry dots -->
+    <circle cx="10" cy="750" r="5" fill="#e84a38"/>
+    <circle cx="22" cy="735" r="4.5" fill="#f05b4a"/>
+    <circle cx="28" cy="700" r="5" fill="#d83827"/>
+    <circle cx="34" cy="685" r="4.5" fill="#f05b4a"/>
+    <circle cx="20" cy="695" r="4" fill="#ff6755"/>
+    <circle cx="12" cy="780" r="4.5" fill="#e84a38"/>
+    <circle cx="28" cy="765" r="4.5" fill="#ff6755"/>
+
+    <!-- Wide leaves / blades -->
+    <path d="M0,920 Q35,840 45,760 Q25,840 0,920 Z" fill="#2d6f73"/>
+    <path d="M30,950 Q80,860 100,780 Q65,860 30,950 Z" fill="#3b868a"/>
+    <path d="M50,980 Q110,890 135,810 Q95,890 50,980 Z" fill="#2d6f73"/>
+    <path d="M70,1000 Q140,910 170,830 Q120,910 70,1000 Z" fill="#4ea0a3"/>
+  </g>
+
+  <!-- Left Bottom Lily Flowers -->
+  <g transform="translate(10, 870)">
+    <!-- Lily 1 -->
+    <path d="M60,40 Q75,15 80,0 Q70,25 60,40 Z" fill="url(#lilyGrad)"/>
+    <path d="M60,40 Q90,25 105,20 Q85,35 60,40 Z" fill="url(#lilyGrad)"/>
+    <path d="M60,40 Q85,50 100,60 Q75,55 60,40 Z" fill="url(#lilyGrad)"/>
+    <path d="M60,40 Q65,65 70,80 Q60,60 60,40 Z" fill="url(#lilyGrad)"/>
+    <circle cx="60" cy="40" r="4" fill="#ffcf44"/>
+  </g>
+
+  <!-- Right Trees & Foliage -->
+  <g>
+    <!-- Right Upper & Mid Tree Cluster -->
+    <ellipse cx="1620" cy="380" rx="160" ry="130" fill="url(#foliageDark)"/>
+    <ellipse cx="1560" cy="430" rx="140" ry="110" fill="url(#foliageMid)"/>
+    <ellipse cx="1630" cy="490" rx="130" ry="105" fill="url(#foliageLight)"/>
+    <ellipse cx="1520" cy="500" rx="120" ry="95" fill="url(#foliageMid)"/>
+
+    <!-- Right Mid-Lower Foliage -->
+    <ellipse cx="1640" cy="650" rx="170" ry="140" fill="url(#foliageDark)"/>
+    <ellipse cx="1550" cy="680" rx="140" ry="120" fill="url(#foliageMid)"/>
+    <ellipse cx="1480" cy="720" rx="120" ry="100" fill="url(#foliageLight)"/>
+    <ellipse cx="1570" cy="780" rx="140" ry="110" fill="url(#foliageDark)"/>
+    <ellipse cx="1490" cy="820" rx="110" ry="90" fill="url(#foliageMid)"/>
+
+    <!-- Small leaf highlights right -->
+    <circle cx="1470" cy="470" r="28" fill="url(#foliageMint)"/>
+    <circle cx="1440" cy="700" r="30" fill="url(#foliageMint)"/>
+    <circle cx="1420" cy="740" r="24" fill="url(#foliageLight)"/>
+
+    <!-- Right branches & leaves framing -->
+    <path d="M1650,420 Q1480,440 1370,390" stroke="#16393b" stroke-width="4" fill="none"/>
+    <ellipse cx="1370" cy="385" rx="35" ry="16" transform="rotate(-15 1370 385)" fill="url(#foliageLight)"/>
+    <ellipse cx="1420" cy="405" rx="30" ry="14" transform="rotate(20 1420 405)" fill="url(#foliageMint)"/>
+    <ellipse cx="1460" cy="425" rx="32" ry="15" transform="rotate(-10 1460 425)" fill="url(#foliageMid)"/>
+
+    <path d="M1650,560 Q1500,560 1410,530" stroke="#16393b" stroke-width="3" fill="none"/>
+    <ellipse cx="1410" cy="525" rx="28" ry="13" transform="rotate(-25 1410 525)" fill="url(#foliageLight)"/>
+    <ellipse cx="1450" cy="545" rx="26" ry="12" transform="rotate(15 1450 545)" fill="url(#foliageMint)"/>
+
+    <!-- Right rocks -->
+    <path d="M1480,860 L1420,810 L1370,845 L1350,885 L1410,920 L1490,900 Z" fill="url(#rockGrad)"/>
+    <path d="M1420,810 L1370,845 L1385,890 L1430,855 Z" fill="#b993a9" fill-opacity="0.6"/>
+
+    <!-- Right reeds & lily flowers -->
+    <path d="M1550,980 Q1470,860 1430,760" stroke="#1c484a" stroke-width="3.5" fill="none"/>
+    <path d="M1520,1000 Q1440,890 1400,800" stroke="#1c484a" stroke-width="3" fill="none"/>
+    <path d="M1580,960 Q1500,850 1470,750" stroke="#16393b" stroke-width="4" fill="none"/>
+
+    <!-- Right Lily Flowers (Orange) -->
+    <!-- Lily 1 -->
+    <g transform="translate(1420, 800)">
+      <path d="M0,0 Q15,-35 25,-55 Q10,-25 0,0 Z" fill="url(#lilyGrad)"/>
+      <path d="M0,0 Q35,-25 55,-35 Q30,-10 0,0 Z" fill="url(#lilyGrad)"/>
+      <path d="M0,0 Q40,5 60,15 Q30,10 0,0 Z" fill="url(#lilyGrad)"/>
+      <path d="M0,0 Q20,30 30,50 Q10,20 0,0 Z" fill="url(#lilyGrad)"/>
+      <path d="M0,0 Q-15,25 -25,45 Q-5,20 0,0 Z" fill="url(#lilyGrad)"/>
+      <circle cx="5" cy="-5" r="5" fill="#ffe066"/>
+    </g>
+
+    <!-- Lily 2 (Lower Right) -->
+    <g transform="translate(1380, 860)">
+      <path d="M0,0 Q18,-30 30,-48 Q12,-20 0,0 Z" fill="url(#lilyGrad)"/>
+      <path d="M0,0 Q38,-15 58,-22 Q32,-5 0,0 Z" fill="url(#lilyGrad)"/>
+      <path d="M0,0 Q32,20 48,35 Q22,12 0,0 Z" fill="url(#lilyGrad)"/>
+      <path d="M0,0 Q-10,25 -18,40 Q-4,15 0,0 Z" fill="url(#lilyGrad)"/>
+      <circle cx="6" cy="-4" r="4.5" fill="#ffe066"/>
+    </g>
+  </g>
+
+  <!-- Floating Orange Butterfly -->
+  <g transform="translate(1350, 240) rotate(-15)">
+    <!-- Left upper wing -->
+    <path d="M0,0 C-15,-25 -45,-35 -55,-20 C-65,-5 -45,15 -10,8 Z" fill="#ff7f32" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M-10,-5 C-25,-18 -42,-22 -48,-14 C-52,-6 -38,5 -10,-5 Z" fill="#ff9e54"/>
+    <!-- Left lower wing -->
+    <path d="M0,5 C-12,12 -35,22 -35,35 C-35,45 -18,45 -5,18 Z" fill="#ff6b1a" stroke="#1a1a1a" stroke-width="1.8"/>
+    <!-- Right upper wing -->
+    <path d="M5,0 C18,-25 48,-32 55,-18 C62,-2 42,15 12,8 Z" fill="#ff7f32" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M10,-5 C24,-16 42,-20 48,-12 C52,-3 36,6 10,-5 Z" fill="#ff9e54"/>
+    <!-- Right lower wing -->
+    <path d="M5,5 C15,14 36,24 35,38 C34,46 18,44 7,18 Z" fill="#ff6b1a" stroke="#1a1a1a" stroke-width="1.8"/>
+    <!-- Butterfly body -->
+    <ellipse cx="2" cy="6" rx="3.5" ry="16" fill="#1f1f1f"/>
+    <!-- Antennae -->
+    <path d="M0,-8 Q-10,-20 -18,-22" stroke="#1f1f1f" stroke-width="1.5" fill="none"/>
+    <path d="M4,-8 Q14,-20 22,-22" stroke="#1f1f1f" stroke-width="1.5" fill="none"/>
+  </g>
+</svg>
