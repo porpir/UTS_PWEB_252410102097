@@ -1,10 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Profile - Kedai Nusantara')
+@section('title', 'Profile - Kedai Minuman Nusantara')
 
 @section('content')
 <div class="container py-4">
-    <!-- Breadcrumb -->
     <div class="d-flex justify-content-between align-items-center mb-3 px-2">
         <div>
             <h5 class="fw-extrabold mb-0 text-dark">Profil Pengguna & Status Akun</h5>
@@ -17,20 +16,17 @@
         </div>
     </div>
 
-    <!-- macOS Window Frame (Screenshot 1) -->
-    <div class="lune-window text-start mb-4">
-        <!-- Window Header -->
+    <div class="app-window text-start mb-4">
         <div class="window-header">
             <div class="window-dots">
                 <span class="window-dot dot-red"></span>
                 <span class="window-dot dot-yellow"></span>
                 <span class="window-dot dot-green"></span>
             </div>
-            <span class="window-title">kedainusantara.app — Profil Pengguna</span>
+            <span class="window-title">Kedai Minuman Nusantara — Profil Pengguna</span>
         </div>
 
         <div class="window-body flex-column flex-md-row">
-            <!-- Sidebar -->
             <div class="window-sidebar">
                 <div class="sidebar-section-title">WORKSPACE</div>
                 <a href="{{ route('dashboard', ['username' => $username]) }}" class="sidebar-nav-item">
@@ -53,13 +49,10 @@
                 </div>
             </div>
 
-            <!-- Main Content Area -->
             <div class="window-main">
                 <div class="row g-4">
-                    <!-- Left: Weekly Performance / Status Card (Screenshot 4 style) -->
                     <div class="col-lg-6">
                         <div class="p-4 rounded-4 border bg-white h-100 position-relative" style="border-color: #edf1f2;">
-                            <!-- Floating butterfly decoration (Screenshot 4: top right) -->
                             <div class="butterfly-float position-absolute d-none d-sm-block" style="right: 15px; top: -15px; z-index: 5;">
                                 <svg viewBox="0 0 50 50" width="40" height="40">
                                     <path d="M25,25 Q10,5 5,15 Q0,25 20,25 Z" fill="#ff7a29"/>
@@ -80,35 +73,36 @@
                                 Status Operasional Mingguan
                             </h5>
 
-                            <!-- Two Stat Boxes (Screenshot 4) -->
                             <div class="row g-3 mb-4">
                                 <div class="col-6">
                                     <div class="p-3 text-center rounded-3 border" style="border-color: #eff2f4;">
-                                        <div class="fw-extrabold text-dark" style="font-size: 2.25rem; line-height: 1;">100%</div>
+                                        <div class="fw-extrabold text-dark" style="font-size: 2.25rem; line-height: 1;">
+                                            {{ $infoAdmin['kehadiran'] }}
+                                        </div>
                                         <div class="text-muted small mt-1">Kehadiran Shift</div>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="p-3 text-center rounded-3 border" style="border-color: #eff2f4;">
-                                        <div class="fw-extrabold text-dark" style="font-size: 2.25rem; line-height: 1;">5</div>
+                                        <div class="fw-extrabold text-dark" style="font-size: 2.25rem; line-height: 1;">
+                                            {{ $infoAdmin['menu_aktif'] }}
+                                        </div>
                                         <div class="text-muted small mt-1">Menu Aktif</div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Insight Box (Screenshot 4) -->
                             <div class="p-3 rounded-3" style="background-color: #edf6f0;">
                                 <div class="fw-bold mb-1" style="font-size: 0.95rem; color: #224d3a;">
                                     Catatan Sistem
                                 </div>
                                 <p class="mb-0 small" style="color: #3b5c4b; line-height: 1.45;">
-                                    Akun pengelola aktif dan bertugas di cabang {{ $infoAdmin['lokasi'] }} dengan jadwal shift {{ $infoAdmin['shift'] }}.
+                                    {{ $infoAdmin['catatan_sistem'] }}
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Right: Informasi Detail Akun (Original UTS Data) -->
                     <div class="col-lg-6">
                         <div class="p-4 rounded-4 border bg-white h-100" style="border-color: #edf1f2;">
                             <div class="d-flex align-items-center gap-3 mb-4">

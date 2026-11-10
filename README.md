@@ -15,7 +15,7 @@ Repository ini berisi proyek aplikasi web sederhana berbasis arsitektur MVC meng
 4. Halaman Profil: Menampilkan ringkasan akun pengelola aktif.
 
 ## Tangkapan Layar
-![Halaman Login](public/screenshots/login.png)
-![Halaman Dashboard](public/screenshots/dashboard.png)
-![Halaman Pengelolaan](public/screenshots/pengelolaan.png)
-![Halaman Profil](public/screenshots/profile.png)
+![Halaman Login](screenshots/login.png)
+![Halaman Dashboard](screenshots/dashboard.png)
+![Halaman Pengelolaan](screenshots/pengelolaan.png)
+![Halaman Profil](screenshots/profile.png)

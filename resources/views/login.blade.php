@@ -1,13 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Login - Kedai Nusantara')
+@section('title', 'Login - Kedai Minuman Nusantara')
 @section('hide_nav', true)
 
 @section('content')
 <div class="container py-5 d-flex flex-column justify-content-center align-items-center" style="min-height: 85vh;">
-    <!-- Floating macOS Window Card (Screenshot 1 & 2 design) -->
     <div class="position-relative w-100" style="max-width: 460px;">
-        <!-- Floating Butterfly decoration (Screenshot 2 / 4) -->
         <div class="butterfly-float position-absolute d-none d-sm-block" style="left: -24px; bottom: 35px; z-index: 10;">
             <svg viewBox="0 0 50 50" width="44" height="44">
                 <path d="M25,25 Q10,5 5,15 Q0,25 20,25 Z" fill="#ff7a29"/>
@@ -18,18 +16,16 @@
             </svg>
         </div>
 
-        <div class="lune-window text-start">
-            <!-- Window Header (Screenshot 1) -->
+        <div class="app-window text-start">
             <div class="window-header">
                 <div class="window-dots">
                     <span class="window-dot dot-red"></span>
                     <span class="window-dot dot-yellow"></span>
                     <span class="window-dot dot-green"></span>
                 </div>
-                <span class="window-title">kedainusantara.app — Masuk Sistem</span>
+                <span class="window-title">Kedai Minuman Nusantara — Masuk Sistem</span>
             </div>
 
-            <!-- Card Body -->
             <div class="p-4 p-md-5 bg-white">
                 <div class="text-center mb-4">
                     <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width: 58px; height: 58px; background-color: #e8f5ec; font-size: 1.75rem;">
@@ -46,26 +42,30 @@
                 <form action="{{ route('login.proses') }}" method="POST">
                     @csrf
 
-                    <!-- Username Field (Screenshot 2 floating-border style) -->
                     <div class="floating-border-input mb-3">
                         <span class="floating-border-label">USERNAME</span>
-                        <input type="text" name="username" id="username" placeholder="Masukkan nama pengguna" value="Andi" required autofocus>
+                        <input type="text" name="username" id="username" placeholder="Masukkan nama pengguna" value="{{ old('username') }}" required autofocus>
                     </div>
+                    @error('username')
+                        <div class="text-danger small mt-n2 mb-2">{{ $message }}</div>
+                    @enderror
 
-                    <!-- Password Field (Screenshot 2 floating-border style) -->
                     <div class="floating-border-input mb-4">
                         <span class="floating-border-label">PASSWORD</span>
-                        <input type="password" name="password" id="password" placeholder="Masukkan kata sandi" value="password" required>
+                        <input type="password" name="password" id="password" placeholder="Masukkan kata sandi" required>
                     </div>
+                    @error('password')
+                        <div class="text-danger small mt-n2 mb-2">{{ $message }}</div>
+                    @enderror
 
-                    <button type="submit" class="btn btn-lune-orange w-100 py-3">
+                    <button type="submit" class="btn btn-app-primary w-100 py-3">
                         Masuk ke Dashboard <i class="bi bi-arrow-right"></i>
                     </button>
                 </form>
 
                 <div class="mt-4 text-center">
                     <span class="text-muted small" style="font-size: 0.8rem;">
-                        💡 Petunjuk: Masukkan nama Anda (contoh: <strong>Andi</strong>) lalu klik masuk.
+                        Sistem otentikasi sesi pengelola Kedai Minuman Nusantara
                     </span>
                 </div>
             </div>

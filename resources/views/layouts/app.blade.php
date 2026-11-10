@@ -8,7 +8,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Bootstrap 5 & Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,19 +16,19 @@
 
     <style>
         :root {
-            --lune-dark: #111827;
-            --lune-teal-dark: #0f3f44;
-            --lune-teal-mid: #1b5e5a;
-            --lune-teal-light: #2d7a75;
-            --lune-orange: #df5834;
-            --lune-orange-hover: #c94927;
-            --lune-peach: #fdeee3;
-            --lune-peach-dark: #b8542c;
-            --lune-peach-text: #644133;
-            --lune-mint: #e8f5ec;
-            --lune-mint-dark: #1b5e20;
-            --lune-blue: #edf4fe;
-            --lune-sidebar: #edf7f5;
+            --app-dark: #111827;
+            --app-teal-dark: #0f3f44;
+            --app-teal-mid: #1b5e5a;
+            --app-teal-light: #2d7a75;
+            --app-orange: #df5834;
+            --app-orange-hover: #c94927;
+            --app-peach: #fdeee3;
+            --app-peach-dark: #b8542c;
+            --app-peach-text: #644133;
+            --app-mint: #e8f5ec;
+            --app-mint-dark: #1b5e20;
+            --app-blue: #edf4fe;
+            --app-sidebar: #edf7f5;
         }
 
         * {
@@ -37,12 +37,12 @@
 
         body {
             font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            color: var(--lune-dark);
+            color: var(--app-dark);
             min-height: 100vh;
             margin: 0;
             padding: 0;
             background-color: #cae8e1;
-            background-image: url('/images/lune-scenery.svg');
+            background-image: url('/images/background.svg');
             background-size: cover;
             background-position: top center;
             background-attachment: fixed;
@@ -50,12 +50,8 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        .font-script {
-            font-family: 'Caveat', cursive;
-        }
-
-        /* Floating pill navbar (Screenshot 1) */
-        .lune-navbar-wrapper {
+        /* Navigasi Mengambang */
+        .app-navbar-wrapper {
             position: sticky;
             top: 16px;
             z-index: 1030;
@@ -63,10 +59,10 @@
             margin-bottom: 1.5rem;
         }
 
-        .lune-navbar {
+        .app-navbar {
             max-width: 920px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.88);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.7);
@@ -78,20 +74,19 @@
             justify-content: space-between;
         }
 
-        .lune-brand {
-            font-family: 'Caveat', cursive;
-            font-size: 1.85rem;
-            font-weight: 700;
+        .app-brand {
+            font-size: 1.15rem;
+            font-weight: 800;
             color: #111827;
             text-decoration: none;
-            line-height: 1;
+            letter-spacing: -0.02em;
             margin-right: 1.5rem;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
         }
 
-        .lune-nav-links {
+        .app-nav-links {
             display: flex;
             align-items: center;
             gap: 1.5rem;
@@ -100,31 +95,31 @@
             padding: 0;
         }
 
-        .lune-nav-link {
+        .app-nav-link {
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 500;
             color: #4b5563;
             transition: all 0.2s ease;
-            padding: 6px 12px;
+            padding: 6px 14px;
             border-radius: 9999px;
         }
 
-        .lune-nav-link:hover {
+        .app-nav-link:hover {
             color: #111827;
             background: rgba(0, 0, 0, 0.04);
         }
 
-        .lune-nav-link.active {
+        .app-nav-link.active {
             color: #111827;
             font-weight: 700;
             background: #ffffff;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
         }
 
-        /* Buttons */
-        .btn-lune-orange {
-            background-color: var(--lune-orange);
+        /* Tombol Utama */
+        .btn-app-primary {
+            background-color: var(--app-orange);
             color: #ffffff !important;
             border-radius: 9999px;
             font-size: 0.95rem;
@@ -140,14 +135,14 @@
             gap: 6px;
         }
 
-        .btn-lune-orange:hover {
-            background-color: var(--lune-orange-hover);
+        .btn-app-primary:hover {
+            background-color: var(--app-orange-hover);
             transform: translateY(-1px);
             box-shadow: 0 10px 24px rgba(223, 88, 52, 0.35);
         }
 
-        /* macOS Window Mockup (Screenshot 1) */
-        .lune-window {
+        /* Kontainer Jendela Aplikasi */
+        .app-window {
             background: #ffffff;
             border-radius: 24px;
             box-shadow: 0 30px 60px -15px rgba(14, 45, 40, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.85);
@@ -253,7 +248,7 @@
             overflow-x: hidden;
         }
 
-        /* KPI Metric Cards (Screenshot 1) */
+        /* Kartu Metrik Ringkasan */
         .kpi-card {
             border: 1px solid #eff2f2;
             border-radius: 14px;
@@ -289,7 +284,6 @@
             color: #6b7280;
         }
 
-        /* Section Titles inside App */
         .app-sec-title {
             font-size: 0.725rem;
             font-weight: 700;
@@ -300,7 +294,7 @@
             margin-bottom: 12px;
         }
 
-        /* Focus Task Item (Screenshot 1) */
+        /* Daftar Tugas Operasional */
         .focus-item {
             border: 1px solid #f0f3f3;
             border-radius: 12px;
@@ -348,9 +342,9 @@
             user-select: none;
         }
 
-        /* AI Suggests Peach Card (Screenshot 1) */
+        /* Kotak Rekomendasi / Informasi */
         .ai-peach-card {
-            background-color: var(--lune-peach);
+            background-color: var(--app-peach);
             border-radius: 18px;
             padding: 20px 22px;
             text-align: center;
@@ -360,7 +354,7 @@
             font-size: 0.725rem;
             font-weight: 800;
             letter-spacing: 0.05em;
-            color: var(--lune-peach-dark);
+            color: var(--app-peach-dark);
             margin-bottom: 8px;
             text-transform: uppercase;
         }
@@ -368,7 +362,7 @@
         .ai-peach-text {
             font-size: 0.85rem;
             line-height: 1.45;
-            color: var(--lune-peach-text);
+            color: var(--app-peach-text);
             margin-bottom: 16px;
         }
 
@@ -393,7 +387,7 @@
             color: #000;
         }
 
-        /* Floating border input (Screenshot 2) */
+        /* Input Form Border Label */
         .floating-border-input {
             position: relative;
             border: 1.5px solid #7cd1d9;
@@ -426,7 +420,7 @@
             background: transparent;
         }
 
-        /* Priority pills (Screenshot 2 / Screenshot 5) */
+        /* Tombol Pill Kategori */
         .priority-pill {
             background: #ffffff;
             color: #374151;
@@ -455,7 +449,7 @@
             font-weight: 600;
         }
 
-        /* Plan block row (Screenshot 3) */
+        /* Blok Bar Status */
         .plan-block-row {
             display: flex;
             align-items: stretch;
@@ -476,7 +470,7 @@
             font-weight: 600;
         }
 
-        /* Floating Butterfly decoration */
+        /* Dekorasi Animasi */
         .butterfly-float {
             display: inline-block;
             animation: butterfly-anim 4s ease-in-out infinite alternate;
@@ -488,8 +482,8 @@
             100% { transform: translateY(-3px) rotate(-3deg); }
         }
 
-        /* Table styling */
-        .lune-table thead th {
+        /* Tabel Kustom */
+        .custom-table thead th {
             font-size: 0.75rem;
             font-weight: 700;
             letter-spacing: 0.06em;
@@ -499,14 +493,14 @@
             padding: 12px 16px;
         }
 
-        .lune-table tbody td {
+        .custom-table tbody td {
             padding: 14px 16px;
             vertical-align: middle;
             border-bottom: 1px solid #f3f5f5;
             font-size: 0.875rem;
         }
 
-        .lune-table tbody tr:hover td {
+        .custom-table tbody tr:hover td {
             background-color: #f9fbfb;
         }
     </style>
@@ -515,7 +509,7 @@
 
     @hasSection('hide_nav')
     @else
-        <div class="lune-navbar-wrapper">
+        <div class="app-navbar-wrapper">
             <x-navbar :username="$username ?? 'Pengunjung'" />
         </div>
     @endif

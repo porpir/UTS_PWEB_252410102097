@@ -1,10 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Pengelolaan - Kedai Nusantara')
+@section('title', 'Pengelolaan - Kedai Minuman Nusantara')
 
 @section('content')
 <div class="container py-4">
-    <!-- Breadcrumb -->
     <div class="d-flex justify-content-between align-items-center mb-3 px-2">
         <div>
             <h5 class="fw-extrabold mb-0 text-dark">Daftar Inventaris Minuman</h5>
@@ -17,20 +16,17 @@
         </div>
     </div>
 
-    <!-- macOS Window Frame (Screenshot 1) -->
-    <div class="lune-window text-start mb-4">
-        <!-- Window Header -->
+    <div class="app-window text-start mb-4">
         <div class="window-header">
             <div class="window-dots">
                 <span class="window-dot dot-red"></span>
                 <span class="window-dot dot-yellow"></span>
                 <span class="window-dot dot-green"></span>
             </div>
-            <span class="window-title">kedainusantara.app — Pengelolaan Inventaris Minuman</span>
+            <span class="window-title">Kedai Minuman Nusantara — Pengelolaan Inventaris</span>
         </div>
 
         <div class="window-body flex-column flex-md-row">
-            <!-- Sidebar -->
             <div class="window-sidebar">
                 <div class="sidebar-section-title">WORKSPACE</div>
                 <a href="{{ route('dashboard', ['username' => $username]) }}" class="sidebar-nav-item">
@@ -50,20 +46,14 @@
                 <button type="button" class="sidebar-filter-btn btn text-start p-2 mb-1 w-100 rounded-3 small fw-semibold text-dark border-0 bg-white shadow-sm" data-category="" onclick="applyCategoryFilter('')">
                     ● Semua Minuman
                 </button>
-                <button type="button" class="sidebar-filter-btn btn text-start p-2 mb-1 w-100 rounded-3 small text-secondary border-0" data-category="Herbal Segar" onclick="applyCategoryFilter('Herbal Segar')">
-                    🌿 Herbal Segar
-                </button>
-                <button type="button" class="sidebar-filter-btn btn text-start p-2 mb-1 w-100 rounded-3 small text-secondary border-0" data-category="Tradisional Hangat" onclick="applyCategoryFilter('Tradisional Hangat')">
-                    ☕ Tradisional Hangat
-                </button>
-                <button type="button" class="sidebar-filter-btn btn text-start p-2 w-100 rounded-3 small text-secondary border-0" data-category="Kopi Lokal" onclick="applyCategoryFilter('Kopi Lokal')">
-                    🌰 Kopi Lokal
-                </button>
+                @foreach($daftarKategori as $kat)
+                    <button type="button" class="sidebar-filter-btn btn text-start p-2 mb-1 w-100 rounded-3 small text-secondary border-0" data-category="{{ $kat }}" onclick="applyCategoryFilter('{{ $kat }}')">
+                        ● {{ $kat }}
+                    </button>
+                @endforeach
             </div>
 
-            <!-- Main Content Area -->
             <div class="window-main">
-                <!-- Highlight Summary Blocks (Screenshot 3 style) -->
                 <div class="mb-4">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <span class="fw-bold small text-uppercase" style="letter-spacing: 0.08em; color: #557b75;">
@@ -73,48 +63,29 @@
                     </div>
 
                     <div class="row g-2">
-                        <div class="col-md-4">
-                            <div class="plan-block-row mb-0" style="background-color: #e8f5ec; cursor: pointer;" onclick="searchSpecificMenu('Es Kunyit Asam')">
-                                <div class="plan-bar" style="background-color: #2e7d32;"></div>
-                                <div class="plan-content" style="color: #173822; font-size: 0.825rem; padding: 12px 14px;">
-                                    <strong>Stok Aman:</strong> Es Kunyit Asam (30 Cup)
+                        @foreach($statusPersediaan as $status)
+                            <div class="col-md-4">
+                                <div class="plan-block-row mb-0" style="background-color: {{ $status['bg'] }}; cursor: pointer;" onclick="searchSpecificMenu('{{ $status['nama'] }}')">
+                                    <div class="plan-bar" style="background-color: {{ $status['warna'] }};"></div>
+                                    <div class="plan-content" style="color: {{ $status['text'] }}; font-size: 0.825rem; padding: 12px 14px;">
+                                        <strong>{{ $status['status'] }}:</strong> {{ $status['nama'] }} ({{ $status['stok'] }})
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="plan-block-row mb-0" style="background-color: #fef2e9; cursor: pointer;" onclick="searchSpecificMenu('Es Bunga Telang')">
-                                <div class="plan-bar" style="background-color: #e06d3d;"></div>
-                                <div class="plan-content" style="color: #4a2818; font-size: 0.825rem; padding: 12px 14px;">
-                                    <strong>Stok Stabil:</strong> Es Bunga Telang (25 Cup)
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="plan-block-row mb-0" style="background-color: #edf4fe; cursor: pointer;" onclick="searchSpecificMenu('Wedang Jahe')">
-                                <div class="plan-bar" style="background-color: #3b82f6;"></div>
-                                <div class="plan-content" style="color: #1b3152; font-size: 0.825rem; padding: 12px 14px;">
-                                    <strong>Perlu Restock:</strong> Wedang Jahe (15 Cup)
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
 
-                <!-- Category Pills (Screenshot 2 / Screenshot 5) & Search Bar -->
                 <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
                     <div class="d-flex align-items-center gap-2 flex-wrap">
                         <button type="button" class="priority-pill active" data-category="" onclick="applyCategoryFilter('')">
                             Semua
                         </button>
-                        <button type="button" class="priority-pill" data-category="Herbal Segar" onclick="applyCategoryFilter('Herbal Segar')">
-                            Herbal Segar
-                        </button>
-                        <button type="button" class="priority-pill" data-category="Tradisional Hangat" onclick="applyCategoryFilter('Tradisional Hangat')">
-                            Tradisional Hangat
-                        </button>
-                        <button type="button" class="priority-pill" data-category="Kopi Lokal" onclick="applyCategoryFilter('Kopi Lokal')">
-                            Kopi Lokal
-                        </button>
+                        @foreach($daftarKategori as $kat)
+                            <button type="button" class="priority-pill" data-category="{{ $kat }}" onclick="applyCategoryFilter('{{ $kat }}')">
+                                {{ $kat }}
+                            </button>
+                        @endforeach
                     </div>
 
                     <div>
@@ -122,9 +93,8 @@
                     </div>
                 </div>
 
-                <!-- Table of $daftarMinuman -->
                 <div class="table-responsive rounded-3 border" style="border-color: #eff2f2;">
-                    <table class="table lune-table mb-0 align-middle" id="inventarisTable">
+                    <table class="table custom-table mb-0 align-middle" id="inventarisTable">
                         <thead style="background-color: #fafbfb;">
                             <tr>
                                 <th class="ps-4 py-3">Kode</th>
@@ -180,7 +150,6 @@
     function applyCategoryFilter(cat) {
         currentCategory = cat;
 
-        // 1. Update Tombol Filter Cepat di Sidebar
         document.querySelectorAll('.sidebar-filter-btn').forEach(btn => {
             const btnCat = btn.getAttribute('data-category');
             if (btnCat === cat) {
@@ -192,7 +161,6 @@
             }
         });
 
-        // 2. Update Tombol Pill Kategori di Atas Tabel
         document.querySelectorAll('.priority-pill').forEach(pill => {
             const pillCat = pill.getAttribute('data-category');
             if (pillCat === cat) {
@@ -202,7 +170,6 @@
             }
         });
 
-        // 3. Terapkan Filter pada Baris Tabel
         filterTableRows();
     }
 

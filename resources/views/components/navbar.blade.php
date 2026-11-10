@@ -1,27 +1,27 @@
 @props(['username' => 'Pengunjung'])
 
-<nav class="lune-navbar">
+<nav class="app-navbar">
     <div class="d-flex align-items-center">
-        <a class="lune-brand" href="{{ route('dashboard', ['username' => $username]) }}">
-            <span class="font-script fs-2 fw-bold text-dark">Nusantara.</span>
-            <span class="fs-6 fw-bold text-secondary d-none d-lg-inline ms-1" style="font-family: 'Plus Jakarta Sans', sans-serif;">Kedai Minuman</span>
+        <a class="app-brand" href="{{ route('dashboard', ['username' => $username]) }}">
+            <span class="fs-5">🌿</span>
+            <span>Kedai Minuman Nusantara</span>
         </a>
 
-        <ul class="lune-nav-links d-none d-md-flex">
+        <ul class="app-nav-links d-none d-md-flex">
             <li>
-                <a class="lune-nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}" 
+                <a class="app-nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}" 
                    href="{{ route('dashboard', ['username' => $username]) }}">
                     Dashboard
                 </a>
             </li>
             <li>
-                <a class="lune-nav-link {{ request()->routeIs('pengelolaan') ? 'active' : '' }}" 
+                <a class="app-nav-link {{ request()->routeIs('pengelolaan') ? 'active' : '' }}" 
                    href="{{ route('pengelolaan', ['username' => $username]) }}">
                     Pengelolaan
                 </a>
             </li>
             <li>
-                <a class="lune-nav-link {{ request()->routeIs('profile') ? 'active' : '' }}" 
+                <a class="app-nav-link {{ request()->routeIs('profile') ? 'active' : '' }}" 
                    href="{{ route('profile', ['username' => $username]) }}">
                     Profile
                 </a>
